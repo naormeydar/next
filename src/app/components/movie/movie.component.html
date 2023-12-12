@@ -1,0 +1,15 @@
+<div class="movie">
+  <img [src]="movie.image" [alt]="movie.title" />
+  <div class="details">
+    <div class="titleAndYear">{{movie.title}} ({{movie.released}})</div>
+    <div class="ratingWrap" *ngIf="movie.rating as isNumber; else noRating">
+      <mat-icon aria-hidden="false" aria-label="movie rating" fontIcon="star"></mat-icon>
+      <span class="rating">{{ movie.rating | number: '1.1-1' }}</span>
+    </div>
+    <ng-template #noRating>Rating not specified</ng-template>
+  </div>
+  <button class="readMoreBtn" (click)="openDialog($event)">
+    <span>Read more</span>
+    <mat-icon aria-hidden="false" fontIcon="arrow_right_alt"></mat-icon>
+  </button>
+</div>

@@ -1,0 +1,8 @@
+<div class="home" *ngIf="allMovies; else loading">
+  <div class="title">{{title}}</div>
+  <app-header (categorySelectedEvent)="categorySelected($event)" (inputChange)="textChanged($event)"></app-header>
+  <app-movies [movies]="movies"></app-movies>
+</div>
+<ng-template #loading>
+  <div class="loading">Loading...</div>
+</ng-template>

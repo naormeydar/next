@@ -1,0 +1,8 @@
+<div class="movies" *ngIf="movies.length; else noMovies">
+  <div class="movie" *ngFor="let movie of movies">
+    <app-movie [movie]="movie"></app-movie>
+  </div>
+</div>
+<ng-template #noMovies>
+  <div class="noMovies">No movies were found</div>
+</ng-template>

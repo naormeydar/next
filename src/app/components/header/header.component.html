@@ -1,0 +1,11 @@
+<div class="headerWrapper">
+    <input type="text" class="searchInput" [(ngModel)]="searchText" (input)="textChange()" placeholder="Search a movie" />
+   <div class="selectionWrapper">
+    <button class="selectBtn" (click)="toggleShowCategories()">Select Category</button>
+    <div *ngIf="showCategories" class="categories">
+      <div class="category" *ngFor="let category of categories" [class.selected]="category === selectedCategory" (click)="categorySelected(category)">
+        {{ category }}
+      </div>
+    </div>
+  </div>
+</div>

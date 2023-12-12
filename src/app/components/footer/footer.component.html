@@ -1,0 +1,17 @@
+<div class="footer">
+  <img class="secondLogo" src="../../../assets/next-second-icon.png" />
+  <div class="title">
+    Contact us
+  </div>
+  <div class="support">
+    <div>support@nextmovies.com</div>
+    <div>Mon - Fri | 6:00am - 5:00pm PT</div>
+  </div>
+  <div class="links">
+    <div class="link" *ngFor="let link of links">
+      <a [href]="link.linkUrl">
+        <img [src]="'../../../assets/' + link.name + '.png'" />
+      </a>
+    </div>
+  </div>
+</div>
